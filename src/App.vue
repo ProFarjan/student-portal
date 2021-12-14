@@ -8,14 +8,21 @@
   </div>
 </template>
 
-<style>
-#nprogress .bar {
-  height: 4px !important;
-}
-</style>
 <script>
 import BaseComponent from "@/components/BaseComponent";
 export default {
   components: { BaseComponent },
 };
 </script>
+
+<style>
+#nprogress .bar {
+  height: 4px !important;
+}
+.nav-tabs .nav-item {
+  margin-bottom: 0px !important;
+  font-size: 16px;
+  font-weight: 600;
+  color: #639;
+}
+</style>
