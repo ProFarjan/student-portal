@@ -2,9 +2,9 @@
   <div class="card mb-4">
     <div class="card-body">
       <div class="card-title">
-        <span class="font-weight-600">Accounts Statistic</span>
+        <span class="font-weight-600">Credit Statistic</span>
       </div>
-      <v-chart class="chart" id="echartPie" style="height: 300px;" :option="PieOption" />
+      <v-chart class="chart" style="height: 300px;" :option="PieOption" />
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ use([
 ]);
 
 export default {
-  name: "AccountsStatistic",
+  name: "CreditStatistic",
   components: { VChart },
   provide: {
     [THEME_KEY]: 'light'
@@ -48,23 +48,14 @@ export default {
         radius: '60%',
         center: ['50%', '50%'],
         data: [{
-          value: 11500,
-          name: 'Admission Fee'
+          value: 60.5,
+          name: 'Completed'
         }, {
-          value: 28501,
-          name: 'Semester Fee'
+          value: 6,
+          name: 'Remaining'
         }, {
-          value: 3000,
-          name: 'Late Fee'
-        }, {
-          value: 6000,
-          name: 'Retake Fee'
-        }, {
-          value: 15600,
-          name: 'Lab Fee'
-        }, {
-          value: 14500,
-          name: 'Course Fee'
+          value: 70.5,
+          name: 'Incomplete'
         }],
         itemStyle: {
           emphasis: {
