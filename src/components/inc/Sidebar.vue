@@ -67,18 +67,11 @@ export default {
         subMenu: [],
       },
       {
-        id: "accounts",
-        label: "My Account",
+        id: "profile",
+        label: "My Profile",
         icon: "i-Administrator",
-        link: "/accounts",
-        subMenu: [
-          { label: "My Profile", link: "/profile", icon: "i-Checked-User" },
-          {
-            label: "Info Update Status",
-            link: "/updatable",
-            icon: "i-Double-Tap",
-          },
-        ],
+        link: "/profile",
+        subMenu: [],
       },
       {
         id: "result",

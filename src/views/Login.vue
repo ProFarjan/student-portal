@@ -80,7 +80,7 @@ export default {
     isLogin: false,
     username: '',
     password: '',
-    backgroudImage: require("@/assets/images/photo-wide-3.jpg")
+    backgroudImage: require("@/assets/images/photo-wide-3.jpg"),
   }),
   methods: {
     getValidationState ({ dirty, validated, valid = null }) {
