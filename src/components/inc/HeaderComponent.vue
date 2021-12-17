@@ -96,8 +96,12 @@
                 aria-expanded="false"
               />
             </template>
-            <b-dropdown-item href="#">Profile Settings</b-dropdown-item>
-            <b-dropdown-item href="#">Payment History</b-dropdown-item>
+            <b-dropdown-item>
+              <router-link class="nav-item-hold" to="profile">Profile Settings</router-link>
+            </b-dropdown-item>
+            <b-dropdown-item>
+              <router-link class="nav-item-hold" to="payments">Payment History</router-link>
+            </b-dropdown-item>
             <b-dropdown-item @click="logout">Sign out</b-dropdown-item>
           </b-dropdown>
         </div>

@@ -81,10 +81,10 @@ export default {
         subMenu: [],
       },
       {
-        id: "history",
+        id: "payments",
         label: "Payment History",
         icon: "i-File-Chart",
-        link: "/history",
+        link: "/payments",
         subMenu: [],
       },
       {

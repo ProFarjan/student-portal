@@ -436,47 +436,7 @@
                 </b-tabs>
               </b-tab>
               <b-tab title="Update Status">
-                <vuetable
-                  :css="css.table"
-                  ref="vuetable"
-                  api-url="https://vuetable.ratiw.net/api/users"
-                  data-path="data"
-                  :show-sort-icons="true"
-                  :fields="statusTableFields"
-                  pagination-path=""
-                >
-                  <div slot="gender" slot-scope="props">
-                    <span
-                      v-if="props.rowData.gender === 'M'"
-                      class="badge badge-pill badge-success"
-                      >Approved</span
-                    >
-                    <span v-else class="badge badge-pill badge-warning"
-                      >Pending</span
-                    >
-                  </div>
-
-                  <div slot="group.name" slot-scope="props">
-                    <span v-if="props.rowData.gender === 'M'">{{
-                      props.rowData.group.name
-                    }}</span>
-                  </div>
-
-                  <div slot="created_at" slot-scope="props">
-                    <span v-if="props.rowData.gender === 'M'">{{
-                      props.rowData.created_at
-                    }}</span>
-                  </div>
-
-                  <div slot="age" slot-scope="props">
-                    <span
-                      v-if="props.rowData.gender !== 'M'"
-                      class="badge badge-square-danger"
-                    >
-                      <i class="icon-menu i-Close"></i>
-                    </span>
-                  </div>
-                </vuetable>
+                <data-table :fields="fields" :items="items"></data-table>
               </b-tab>
             </b-tabs>
           </div>
@@ -487,11 +447,11 @@
 </template>
 
 <script>
-import Vuetable from "vuetable-2";
+import DataTable from "@/components/DataTable";
 
 export default {
   name: "Profile",
-  components: { Vuetable },
+  components: { DataTable },
   data: () => ({
     fields: [
       { key: "index", label: "SL" },
@@ -520,57 +480,6 @@ export default {
         board: "Dhaka",
       },
     ],
-    statusTableFields: [
-      { name: "id", title: "SL", sortField: "id", direction: "desc" },
-      { name: "nickname", title: "Category" },
-      { name: "email", title: "Old Value" },
-      { name: "name", title: "Changes Value" },
-      { name: "gender", title: "Status" },
-      { name: "group.name", title: "Approved By" },
-      { name: "created_at", title: "Approved Date" },
-      {
-        name: "age",
-        title: "Action",
-        dataClass: "text-center",
-        titleClass: "text-center",
-        width: "7%",
-      },
-    ],
-    css: {
-      table: {
-        tableWrapper: "",
-        tableHeaderClass: "mb-0",
-        tableBodyClass: "mb-0",
-        tableClass: "table table-sm table-bordered table-hover",
-        loadingClass: "loading",
-        ascendingIcon: "fa fa-chevron-up",
-        descendingIcon: "fa fa-chevron-down",
-        ascendingClass: "sorted-asc",
-        descendingClass: "sorted-desc",
-        sortableIcon: "fa fa-sort",
-        detailRowClass: "vuetable-detail-row",
-        handleIcon: "fa fa-bars text-secondary",
-        renderIcon(classes) {
-          return `<i class="${classes.join(" ")}"></span>`;
-        },
-      },
-      pagination: {
-        wrapperClass: "pagination float-right",
-        activeClass: "active",
-        disabledClass: "disabled",
-        pageClass: "page-item",
-        linkClass: "page-link",
-        paginationClass: "pagination",
-        paginationInfoClass: "float-left",
-        dropdownClass: "form-control",
-        icons: {
-          first: "fa fa-chevron-left",
-          prev: "fa fa-chevron-left",
-          next: "fa fa-chevron-right",
-          last: "fa fa-chevron-right",
-        },
-      },
-    },
   }),
 };
 </script>

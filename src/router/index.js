@@ -37,6 +37,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "result" */ "../views/result/result"),
   },
+  {
+    path: "/payments",
+    name: "payments",
+    component: () =>
+      import(/* webpackChunkName: "payments" */ "../views/payments/history"),
+  }
 ];
 
 const router = new VueRouter({
