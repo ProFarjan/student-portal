@@ -1,4 +1,5 @@
 import devTools from 'devtools-detect';
+import { isMobile } from "mobile-device-detect";
 
 export default {
   data: () => ({
@@ -6,7 +7,7 @@ export default {
     fontLogo: require("@/assets/images/logo.png"),
     devTook: devTools.isOpen,
     university: {
-      name: "World University of Bangladesh",
+      name: isMobile ? "WUB" : "World University of Bangladesh",
     },
     user: {
       name: "Farjan Hasan",
@@ -23,7 +24,7 @@ export default {
     },
     menu: {
       divMain: "main-content-wrap sidenav-open d-flex flex-column",
-      divSideMain: "sidebar-left rtl-ps-none ps ps--active-y open",
+      divSideMain: isMobile ? "sidebar-left rtl-ps-none ps ps--active-y open" : "sidebar-left rtl-ps-none ps ps--active-y open",
     },
   }),
   created() {

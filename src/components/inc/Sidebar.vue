@@ -95,7 +95,7 @@ export default {
         subMenu: [
           {
             label: "Course Registration",
-            link: "/courses",
+            link: "/registration",
             icon: "i-Checked-User",
           },
           { label: "Re-Course", link: "/recourse", icon: "i-Double-Tap" },

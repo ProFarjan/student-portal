@@ -85,17 +85,19 @@
                 </div>
 
                 <div class="text-center">
-                  <button
-                    class="btn btn-lg font-weight-700 btn-primary ripple btn-raised-primary"
-                  >
-                    Pay Now
-                  </button>
+                  <router-link to="online-payment">
+                    <button
+                      class="btn btn-lg font-weight-700 btn-primary ripple btn-raised-primary"
+                    >
+                      Pay Now
+                    </button>
+                  </router-link>
                 </div>
               </b-col>
             </b-row>
             <b-row>
               <b-col>
-                <h4 class="alert alert-info alert-card">All Payment Transition History</h4>
+                <h4 class="alert alert-info alert-card border-radius-0 p-2 mb-3">All Payment Transition History</h4>
                 <data-table :items="items" :fields="fields"></data-table>
               </b-col>
             </b-row>

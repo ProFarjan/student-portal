@@ -19,6 +19,7 @@ import Global from "@/config/Global";
 import Notifications from "vue-notification";
 import velocity from "velocity-animate";
 import Notify from "@/plugins/notify";
+import { isMobile } from 'mobile-device-detect';
 
 // Install VeeValidate rules and localization
 Object.keys(rules).forEach((rule) => {
@@ -41,6 +42,7 @@ axios.defaults.baseURL = API.URL;
 Vue.http = Vue.prototype.$http = axios;
 Vue.api = Vue.prototype.$api = API;
 Vue.msg = Vue.prototype.$msg = Notify;
+Vue.isMobile = Vue.prototype.$isMobile = isMobile;
 
 new Vue({
   mixins: [Global],

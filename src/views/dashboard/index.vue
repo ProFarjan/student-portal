@@ -168,11 +168,13 @@
                 </div>
 
                 <div class="text-center">
-                  <button
-                    class="btn btn-xl btn-primary ripple btn-raised-primary"
-                  >
-                    Pay Now
-                  </button>
+                  <router-link to="online-payment">
+                    <button
+                      class="btn btn-xl btn-primary ripple btn-raised-primary"
+                    >
+                      Pay Now
+                    </button>
+                  </router-link>
                 </div>
               </b-col>
             </b-row>

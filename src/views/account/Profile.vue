@@ -6,13 +6,12 @@
           <h3 class="card-title card-header m-0 font-weight-700">
             STUDENT PROFILE
           </h3>
-          <div class="card-body p-3 myRelDiv">
+          <div class="card-body p-3" :class="($isMobile ? '' : 'myRelDiv')">
             <b-tabs
               align="right"
               pills
               lazy
-              active-nav-item-class="font-weight-bold text-uppercase"
-            >
+              active-nav-item-class="font-weight-bold text-uppercase">
               <b-tab title="Your Profile" active>
                 <b-row>
                   <b-col md="3">

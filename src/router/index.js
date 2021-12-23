@@ -42,6 +42,24 @@ const routes = [
     name: "payments",
     component: () =>
       import(/* webpackChunkName: "payments" */ "../views/payments/history"),
+  },
+  {
+    path: "/recourse",
+    name: "recourse",
+    component: () =>
+      import(/* webpackChunkName: "recourse" */ "../views/registration/recourse"),
+  },
+  {
+    path: "/registration",
+    name: "registration",
+    component: () =>
+      import(/* webpackChunkName: "registration" */ "../views/registration/registration"),
+  },
+  {
+    path: "/online-payment",
+    name: "online-payment",
+    component: () =>
+      import(/* webpackChunkName: "OnlinePayment" */ "../views/payments/OnlinePayment"),
   }
 ];
 
@@ -69,6 +87,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
+  window.scrollTo(0, 0);
   setTimeout(() => NProgress.done(), 100);
 });
 
